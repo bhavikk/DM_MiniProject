@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Results</title>
+</head>
+<body>
+	<ol>
+		{% block content %}
+	{% for items in result%}
+	<li><a href="{{ items }}">{{ items }}</a></li><br>
+	{% endfor %}
+	{% endblock%}
+	</ol>
+</body>
+</html>
