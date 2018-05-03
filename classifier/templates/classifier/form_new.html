@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+  <style>
+
+  .form{
+
+    border:1px solid black;
+    padding:20px;
+    margin: auto;
+    height: auto;
+    width:650px;
+    background-color: #456789;
+    color:#ffffff;
+    border-radius:20px;
+    margin-top:150px;
+  }
+
+  .img {
+    margin-bottom: 0px;
+    opacity: 0.4;
+    color: #fff;
+    background: #000 url("./back.jpg") ;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+    position:absolute;
+    top:0;
+    left:0;
+    z-index: 0.5;
+
+  }
+
+  .reg_form{
+    border:1px solid black;
+    padding:20px;
+    margin: auto;
+    height: auto;
+    width:650px;
+    background-color: #456789;
+    color:#ffffff;
+    border-radius:20px;
+    margin-top:100px;
+  }
+  .weight
+  {
+    position: relative;
+    z-index: 1;
+  }
+
+</style>
+</head>
+<body>
+  <div class="img"></div>
+
+  <nav class="navbar fixed navbar-dark bg-dark">
+
+    <ul class="nav navbar-dark ">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu1">Classification</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu2">Prediction</a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Nav tabs -->
+
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active container" id="home">
+
+    </div>
+    <div class="tab-pane container" id="menu1">
+
+      <div class="form">
+        <form action="/classify/search">
+          <center>  <label style="font-weight: bold">Select Any of The Category</label>
+            <br><br>
+            <select class="selectpicker form-control col-md-3" name="search" id="test"
+            data-live-search="true">
+
+            <option value="s" data-max-options="">Sports</option>
+            <option value="t" data-max-options="">Technology</option>
+            <option value="e" data-max-options="">Entertainment</option>
+            <option value="b" data-max-options="">Business</option>
+          </select>
+        </center>
+        
+        <div class="custom-control custom-radio custom-control">
+          <input type="radio" id="KNN" value="KNN" name="Classify" class="custom-control-input">
+          <label class="custom-control-label" for="KNN">KNN</label>
+        </div>
+        <br> 
+        <div class="custom-control custom-radio custom-control">
+          <input type="radio" id="Naive" value="naives" name="Classify" class="custom-control-input">
+          <label class="custom-control-label" for="Naive">Naive</label>
+        </div>
+        <br>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="RandomForest" value="RandomForest" name="Classify" class="custom-control-input">
+          <label class="custom-control-label" for="RandomForest">RandomForest</label> 
+        </div>
+
+        <br> <br>
+        <button class="btn btn-primary weight" type="submit">Submit</button></
+      </form>
+    </div>
+
+  </div>
+  <!-- <div class="tab-pane container" id="menu2">
+    <div class="reg_form">
+        <center>  Fill Out Details</center>
+      <form action="/classify/regression" method="get">
+
+        <div class="form-group col-md-6">
+          <label for="numimg">Number_Images</label>
+          <input type="text" class="form-control" name="i1" id="numimg" placeholder="Enter Number Of Images">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="numvid">Number_Videos</label>
+          <input type="text" class="form-control" name="i2" id="numvid" placeholder="Enter Number Of Videos">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="numhref">Number_Hrefs</label>
+          <input type="text" class="form-control" name="i3" id="numhref" placeholder="Enter Number Of Hrefs">
+        </div>                                                   
+        <input type="submit" name="submit" class="btn btn-primary weight" value="ApplyRegression">
+      </form>
+    </div>
+  </div>
+</div>
+ -->
+<nav class="navbar fixed-bottom navbar-dark bg-dark">
+
+  <span class="navbar-text mx-auto">Some Text</span>
+</nav>
+
+
+</body>
+</html>

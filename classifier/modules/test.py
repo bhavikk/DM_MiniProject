@@ -2,6 +2,9 @@ import pandas as pd
 import sys
 import numpy as np
 import pickle
+from sklearn import linear_model
+import matplotlib.pyplot as plt
+from scipy.stats import linregress
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -117,3 +120,19 @@ def KNN(search):
 			result.append(output['url'][x])
 	print(output['category']);
 	return result;
+
+def regression1(search):
+	print(search['ia'])
+	data=pd.read_csv("/home/bhavikk/DjangoProjects/myapp/classifier/modules/linearReg_data.csv")
+	df_x=pd.DataFrame(data,columns=[" num_hrefs"," num_imgs"," num_videos"])
+	df_y=data["shares"]
+	df_x.fillna(0)
+	df_y.fillna(0)
+	reg=linear_model.LinearRegression()
+	# x_train,x_test,y_train,y_test=train_test_split(df_x,df_y,test_size=0.2,random_state=4)
+	reg.fit(df_x,df_y)
+	d={' num_hrefs':[search['ia']],' num_imgs':[search['ib']],' num_videos':[search['ic']]}
+	# d={' num_hrefs':['1'],' num_imgs':['2'],' num_videos':['3']}
+	df=pd.DataFrame(data=d)
+	a=reg.predict(df)
+	return a

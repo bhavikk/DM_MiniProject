@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div class="tab-pane container" id="menu2">
+    <div class="reg_form">
+        <center>  Fill Out Details</center>
+      <form action="/classify/regression" method="get">
+
+        <div class="form-group col-md-6">
+          <label for="numimg">Number_Images</label>
+          <input type="text" class="form-control" name="ia" id="numimg" placeholder="Enter Number Of Images">
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="numvid">Number_Videos</label>
+          <input type="text" class="form-control" name="ib" id="numvid" placeholder="Enter Number Of Videos">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="numhref">Number_Hrefs</label>
+          <input type="text" class="form-control" name="ic" id="numhref" placeholder="Enter Number Of Hrefs">
+        </div>                                                   
+        <input type="submit" name="submit" class="btn btn-primary weight" value="ApplyRegression">
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- <form action="/classify/regression" method="GET">
+
+          <input type="text" name="searchb">         
+          <input type="text" name="searcha">         
+        
+          <input type="text" name="search">         
+        <input type="submit">                                        
+ 
+</form>
+ --></body>
+</html>
